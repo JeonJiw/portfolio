@@ -1,67 +1,108 @@
 import { Container, Col, Row } from "react-bootstrap";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import java from "../assets/img/java.svg";
+import javascript from "../assets/img/javascript.svg";
+import typescript from "../assets/img/typescript.svg";
+import cpp from "../assets/img/cpp.svg";
+import csharp from "../assets/img/csharp.svg";
+import html from "../assets/img/html.png";
+import css from "../assets/img/css3.svg";
+import nestjs from "../assets/img/nest.png";
+import nodejs from "../assets/img/nodejs.svg";
+import react from "../assets/img/react.svg";
+import docker from "../assets/img/docker.svg";
+import git from "../assets/img/git.svg";
+import github from "../assets/img/github.svg";
+import jquery from "../assets/img/jquery.svg";
+import kotlin from "../assets/img/kotlin.svg";
+import mongodb from "../assets/img/mongodb.svg";
+import mysql from "../assets/img/mysql.svg";
+import amazon from "../assets/img/amazon.svg";
+
 import colorSharp from "../assets/img/color-sharp.png";
 
 export const Skills = () => {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
+  const programmingLanguages = [
+    { src: java, alt: "Java" },
+    { src: javascript, alt: "JavaScript" },
+    { src: typescript, alt: "TypeScript" },
+    { src: cpp, alt: "C++" },
+    { src: csharp, alt: "C#" },
+    { src: html, alt: "HTML" },
+    { src: css, alt: "CSS" },
+    { src: kotlin, alt: "Kotlin" },
+  ];
+
+  const webAppDevelopments = [
+    { src: react, alt: "React" },
+    { src: nestjs, alt: "NestJS" },
+    { src: nodejs, alt: "Node.js" },
+    { src: docker, alt: "Docker" },
+    { src: mongodb, alt: "MongoDB" },
+    { src: mysql, alt: "MySQL" },
+    { src: git, alt: "Git" },
+    { src: github, alt: "GitHub" },
+    { src: amazon, alt: "Amazon" },
+  ];
 
   return (
-    <section className="skil" id="skills">
+    <section className="skill" id="skills">
       <Container>
-        <Row>
-          <Col>
-            <div className="skill-bz">
-              <h2>Skills</h2>
-              <p>description</p>
-              <Carousel
-                responsive={responsive}
-                infinite={true}
-                className="skill-slider"
-              >
-                <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Web Development</h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} alt="Image" />
-                  <h5>Android App Development</h5>
-                </div>
-                <div className="item">
-                  <img src={meter3} alt="Image" />
-                  <h5>Web Development</h5>
-                </div>
-                <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Web Development</h5>
-                </div>
-              </Carousel>
-            </div>
-          </Col>
-        </Row>
+        <div className="skill-bx">
+          <h2>Skills</h2>
+          <Row className="skill-tb">
+            <Col className="skill-pl" xs={12} md={6}>
+              <p className="skill-header">Programming Languages</p>
+              <div className="skill-section">
+                <Row className="justify-content-center">
+                  {programmingLanguages.map((skill, index) => (
+                    <Col
+                      key={index}
+                      xs={6}
+                      sm={4}
+                      md={3}
+                      className="d-flex justify-content-center skill-icon"
+                    >
+                      <img
+                        src={skill.src}
+                        alt={skill.alt}
+                        className="icon-img"
+                      />
+                    </Col>
+                  ))}
+                </Row>
+              </div>
+            </Col>
+            <Col className="skill-dev" xs={12} md={6}>
+              <p className="skill-header">Web / App Developments</p>
+              <div className="skill-section">
+                <Row className="justify-content-center">
+                  {webAppDevelopments.map((skill, index) => (
+                    <Col
+                      key={index}
+                      xs={6}
+                      sm={4}
+                      md={3}
+                      className="d-flex justify-content-center skill-icon"
+                    >
+                      <img
+                        src={skill.src}
+                        alt={skill.alt}
+                        className="icon-img"
+                      />
+                    </Col>
+                  ))}
+                </Row>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </Container>
-      <img className="background-image-left" src={colorSharp} />
+      <img
+        className="background-image-left"
+        src={colorSharp}
+        alt="Background decoration"
+      />
     </section>
   );
 };

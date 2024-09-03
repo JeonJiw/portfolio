@@ -44,7 +44,7 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col>
-            <h2>Project</h2>
+            <h2>Projects</h2>
             <p>description</p>
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
               <Nav
