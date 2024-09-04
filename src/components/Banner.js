@@ -1,75 +1,28 @@
-import { useState, useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg";
+// Banner.js
+import { Container, Row } from "react-bootstrap";
 
-export const Banner = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = [
-    "Backend Developer",
-    "Frontend Developer",
-    "Fullstack Developer",
-  ];
-  const [text, setText] = useState("");
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const period = 2000;
-
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => {
-      clearInterval(ticker);
-    };
-  }, [text]);
-
-  const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
-
-    setText(updatedText);
-    if (isDeleting) {
-      setDelta((prevDelta) => prevDelta / 2);
-    }
-
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setDelta(period);
-    } else if (isDeleting && updatedText === "") {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-      setDelta(500);
-    }
-  };
+export const Banner = ({ scrollRef }) => {
   return (
     <section className="banner" id="home">
-      <Container>
+      <Container className="banner-container">
         <Row className="aligh-items-center">
-          <Col xs={12} md={6} xl={7}>
-            <span className="tagline">Welcome to my Portfolio</span>
-            <h1>
-              {`Hi, I'm Jiwon `}
-              <br /> <span className="wrap">{text}</span>
-            </h1>
-            <p>
-              A software developer with a focus on full-stack development. I
-              enjoy building user-friendly applications using languages like
-              Java, JavaScript, and C++. Here, you'll find examples of my work
-              and the technologies I've used. Let's connect and discuss how we
-              can work together on exciting projects.
-            </p>
-            <button onClick={() => console.log("connect")}>
-              Let’s Connect <ArrowRightCircle size={25} />
+          <h1>Welcome to my portfolio</h1>
+          <p>Hi, I'm Jiwon. Full Stack / Front / Backend Developer</p>
+          <div className="mb-2">
+            <button onClick={() => console.log("Download CV")}>
+              Download CV
             </button>
-          </Col>
-          <Col xs={12} md={6} xl={5}>
-            <img src={headerImg} alr="Header Img" />
-          </Col>
+            <button
+              onClick={() => {
+                if (scrollRef.current) {
+                  scrollRef.current.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, "", "#contactme");
+                }
+              }}
+            >
+              Contact Me
+            </button>
+          </div>
         </Row>
       </Container>
     </section>
