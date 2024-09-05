@@ -380,16 +380,11 @@ nav.navbar .navbar-nav .nav-link.active {
   font-weight: 700;
   text-align: center;
 }
-
-.contact form {
-  padding: 0px;
-}
-
 .contact form label {
   font-size: 18px;
   color: #121212;
   font-weight: 500;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 .contact form input,
 .contact form textarea {
@@ -398,10 +393,9 @@ nav.navbar .navbar-nav .nav-link.active {
   border: 1px solid rgba(55, 33, 33, 0.5);
   border-radius: 10px;
   color: #5b5b5b;
-  margin: 0 0 8px 0;
-  padding: 18px 26px;
+  padding: 18px 30px;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: 0.8px;
   transition: 0.3s ease-in-out;
 }
@@ -427,7 +421,6 @@ nav.navbar .navbar-nav .nav-link.active {
   letter-spacing: 0.8px;
   align-items: center;
   font-weight: 700;
-  letter-spacing: 0.8px;
   padding: 8px 10px;
   background: linear-gradient(
     90.21deg,
@@ -436,10 +429,9 @@ nav.navbar .navbar-nav .nav-link.active {
   );
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 15px;
-  margin-bottom: 16px;
-  display: inline-block;
   color: #fff;
   border-radius: 10px;
+  float: right;
 }
 
 /************ Footer Css ************/
