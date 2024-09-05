@@ -130,10 +130,15 @@ nav.navbar .navbar-nav .nav-link.active {
 /************ Banner Css ************/
 .banner {
   padding: 260px 0 260px 0;
-  background-image: url("./assets/img/background.jpg");
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url("./assets/img/background.jpg");
+
   background-position: top center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,7 +146,6 @@ nav.navbar .navbar-nav .nav-link.active {
   text-align: center;
   height: 100vh;
 }
-
 .banner h1 {
   font-size: 20px;
   font-weight: 700;
@@ -183,57 +187,59 @@ nav.navbar .navbar-nav .nav-link.active {
 }
 
 .skill-bx {
-  border-radius: 64px;
-  text-align: center;
   padding: 60px 50px;
   margin-top: -60px;
 }
 
 .skill h2 {
-  font-size: 45px;
+  font-size: 35px;
   font-weight: 700;
   text-align: center;
   color: #5b5b5b;
 }
 
 .skill p {
-  color: #ffffff;
+  color: #5b5b5b;
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   text-align: center;
 }
 
 .skill-tb {
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .skill-tb p {
-  font-size: 25px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #ffffff;
+  color: #5b5b5b;
+  text-align: left;
 }
 
 .skill-section {
-  padding: 30px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-  background: linear-gradient(
-    90.21deg,
-    rgba(220, 88, 167, 0.4) -5.91%,
-    rgba(101, 73, 223, 0.4) 111.58%
-  );
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .skill-icon {
-  margin: 20px 10px;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.skill-name {
+  padding-top: 10px;
+  font-size: 0.7rem;
+  text-align: center;
 }
 
 .icon-img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   transition: transform 0.3s;
 }
@@ -242,21 +248,13 @@ nav.navbar .navbar-nav .nav-link.active {
   transform: scale(1.1);
 }
 
-.background-image-left {
-  top: 28%;
-  position: absolute;
-  bottom: 0;
-  width: 40%;
-  z-index: -4;
-}
-
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
   position: relative;
 }
 .project h2 {
-  font-size: 45px;
+  font-size: 35px;
   font-weight: 700;
   text-align: center;
 }
@@ -378,7 +376,7 @@ nav.navbar .navbar-nav .nav-link.active {
 /************ Contact Css ************/
 
 .contact h2 {
-  font-size: 45px;
+  font-size: 35px;
   font-weight: 700;
   text-align: center;
 }
