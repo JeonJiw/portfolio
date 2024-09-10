@@ -340,19 +340,14 @@ nav.navbar .navbar-nav .nav-link.active {
 
 .project-page a {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
   font-size: 1rem;
-  color: #007bff;
+  color: #fff;
   text-decoration: none;
-  border: 1px solid #007bff;
-  border-radius: 4px;
   transition: background-color 0.2s, color 0.2s;
 }
 
 .project-page a:hover {
-  background-color: #007bff;
-  color: #fff;
+  cursor: pointer;
 }
 
 .video {

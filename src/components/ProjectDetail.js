@@ -20,9 +20,12 @@ export const ProjectDetail = () => {
       <p>
         <strong>Architecture:</strong> {project.architecture}
       </p>
-      <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-        GitHub Repository
-      </a>
+      <button>
+        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+          GitHub Repository
+        </a>
+      </button>
+
       <div className="video">
         <iframe
           width="560"

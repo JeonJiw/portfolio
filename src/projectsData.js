@@ -12,11 +12,17 @@ const projectsData = [
     title: "Microsoft Team Auto Recording System",
     devType: "Web Development",
     description:
-      "A system to automate recording in Microsoft Teams meetings. Developed using React, Node.js, and integrated with Microsoft Graph API.",
+      "In response to the growing demand for streamlined meeting management within Microsoft Teams, AutoRecord Teams aims to provide a seamless solution for configuring and automating the recording of specific Teams Meetings. This application, designed to be deployed within a client's Microsoft 365 tenant, offers a user-friendly interface, deep integration with Microsoft Graph API, and adherence to Microsoft security standards.",
     githubUrl: "https://github.com/JeonJiw/AutoRecordTeams",
     youtubeUrl: "https://www.youtube.com/watch?v=your-video-id",
-    architecture: "Frontend: React, Backend: Node.js, Database: MongoDB",
+    architecture: "Frontend: React, Backend: Node.js, GraphQL",
     imgUrl: autoRecordingImg1,
+    features: [
+      "User-friendly interface within Microsoft Teams to configure meeting recording settings",
+      "Integration with Microsoft Graph API to fetch all meetings within the client's tenant",
+      "Programmatically enable automatic recording settings for all meetings in the client's tenant using the Teams API",
+      "Resource-efficient and scalable deployment within the client's Microsoft 365 environment",
+    ],
   },
   {
     id: "ther-genius-game",
@@ -24,7 +30,7 @@ const projectsData = [
     devType: "Web Development",
     description:
       "A web game inspired by the popular Genius show, with multiple puzzles and strategies built into the platform.",
-    githubUrl: "https://github.com/your-repo/the-genius-game",
+    githubUrl: "https://github.com/THERgeniusGame",
     youtubeUrl: "https://www.youtube.com/watch?v=your-video-id",
     architecture: "Frontend: React, Backend: Node.js, Database: Firebase",
     imgUrl: therGeniusImg1,
