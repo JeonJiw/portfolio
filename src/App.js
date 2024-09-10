@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { NavBar } from "./components/NavBar";
 import { Banner } from "./components/Banner";
 import { Skills } from "./components/Skills";
@@ -7,26 +12,23 @@ import { Footer } from "./components/Footer";
 import { ContactMe } from "./components/ContactMe";
 import { ProjectDetail } from "./components/ProjectDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useRef } from "react";
 import "./App.css";
 
 function App() {
-  const scrollRef = useRef(null);
-
+  const isRoot = window.location.pathname === "/";
   return (
     <Router>
       <div className="App">
-        <NavBar scrollRef={scrollRef} />
+        {isRoot && <NavBar />}
         <Routes>
           <Route
             path="/"
             element={
               <>
-                {" "}
-                <Banner scrollRef={scrollRef} />
+                <Banner />
                 <Skills />
                 <Projects />
-                <ContactMe ref={scrollRef} />
+                <ContactMe />
               </>
             }
           />

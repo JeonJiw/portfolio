@@ -1,7 +1,7 @@
-// Banner.js
 import { Container, Row } from "react-bootstrap";
+import { Link } from "react-scroll";
 
-export const Banner = ({ scrollRef }) => {
+export const Banner = () => {
   const onClickDownload = () => {
     const url = "http://localhost:3000/Resume_JiwonJeon_202409.pdf";
     const link = document.createElement("a");
@@ -11,24 +11,18 @@ export const Banner = ({ scrollRef }) => {
     link.click();
     link.remove();
   };
+
   return (
     <section className="banner" id="home">
       <Container className="banner-container">
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <h1>Welcome to my portfolio</h1>
           <p>Hi, I'm Jiwon. Full Stack / Front / Backend Developer</p>
           <div className="mb-2">
             <button onClick={onClickDownload}>Download CV</button>
-            <button
-              onClick={() => {
-                if (scrollRef.current) {
-                  scrollRef.current.scrollIntoView({ behavior: "smooth" });
-                  window.history.pushState(null, "", "#contactme");
-                }
-              }}
-            >
-              Contact Me
-            </button>
+            <Link to="contactme" smooth={true} duration={100} offset={-70}>
+              <button>Contact Me</button>
+            </Link>
           </div>
         </Row>
       </Container>
