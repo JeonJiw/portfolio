@@ -1,39 +1,11 @@
 import { Container, Row, Col, Carousel } from "react-bootstrap";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
 import { ProjectCard } from "./ProjectCard";
+import projectsData from "../projectsData.js";
 
 export const Projects = () => {
-  const projects = [
-    {
-      title: "Microsoft Team Auto Recording System",
-      devType: "Web Development",
-      description: "Web Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Ther Genius Game",
-      devType: "Web Development",
-      description: "Web Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "SafeCam",
-      devType: "Web Development",
-      description: "Web Development",
-      imgUrl: projImg3,
-    },
-    {
-      title: "Calory Calculator",
-      devType: "Web Development",
-      description: "Android App Development",
-      imgUrl: projImg1,
-    },
-  ];
   const projectChunks = [];
-  for (let i = 0; i < projects.length; i += 3) {
-    projectChunks.push(projects.slice(i, i + 3));
+  for (let i = 0; i < projectsData.length; i += 3) {
+    projectChunks.push(projectsData.slice(i, i + 3));
   }
 
   return (
