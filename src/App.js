@@ -11,13 +11,14 @@ import { Projects } from "./components/Projects";
 import { Footer } from "./components/Footer";
 import { ContactMe } from "./components/ContactMe";
 import { ProjectDetail } from "./components/ProjectDetail";
+import { HashRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
   const isRoot = window.location.pathname === "/";
   return (
-    <Router basename="/JeonJiw">
+    <HashRouter basename="/JeonJiw">
       <div className="App">
         {isRoot && <NavBar />}
         <Routes>
@@ -36,7 +37,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
