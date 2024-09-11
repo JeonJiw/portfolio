@@ -18,7 +18,7 @@ import "./App.css";
 function App() {
   const isRoot = window.location.pathname === "/";
   return (
-    <HashRouter basename="/JeonJiw">
+    <HashRouter>
       <div className="App">
         {isRoot && <NavBar />}
         <Routes>
