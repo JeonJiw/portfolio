@@ -16,6 +16,7 @@ import kotlin from "../assets/img/kotlin.svg";
 import mongodb from "../assets/img/mongodb.svg";
 import mysql from "../assets/img/mysql.svg";
 import amazon from "../assets/img/amazon.svg";
+import colorsharp from "../assets/img/color-sharp.png";
 
 export const Skills = () => {
   const programmingLanguages = [
@@ -78,6 +79,7 @@ export const Skills = () => {
             </div>
           </div>
         </div>
+        <img className="background-image-left" src={colorsharp} alt="Image" />
       </Container>
     </section>
   );

@@ -8,7 +8,7 @@ export const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             <Nav.Link>
-              <Link to="home" smooth={true} duration={100}>
+              <Link to="/home" smooth={true} duration={100}>
                 Home
               </Link>
             </Nav.Link>

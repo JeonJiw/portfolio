@@ -165,20 +165,63 @@ nav.navbar .navbar-nav .nav-link.active {
 }
 .banner h1 {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.8px;
   line-height: 1;
   margin-bottom: 20px;
   display: block;
+  text-align: start;
 }
 
+.gradient-text {
+  text-transform: uppercase;
+  text-align: start;
+  background-image: linear-gradient(
+    -225deg,
+    #49378a 0%,
+    rgba(57, 21, 214, 0.7) 29%,
+    rgba(213, 18, 135, 0.7) 67%,
+    #9700fb 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
+  display: inline-block;
+  font-size: 50px;
+  font-weight: 700;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.banner button {
+  margin: 20px 10px 20px 0px;
+}
 .banner button:hover svg {
   margin-left: 25px;
 }
-
+.banner-btn-container {
+  text-align: start;
+}
 /************ Skills Css ************/
 .skill {
   position: relative;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("./assets/img/color-sharp.png");
+
+  background-position: top center;
+  background-size: cover;
+  background-repeat: repeat;
 }
 
 .skill-bx {
@@ -219,7 +262,6 @@ nav.navbar .navbar-nav .nav-link.active {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .skill-icon {
   margin: 20px;
   display: flex;
@@ -243,6 +285,13 @@ nav.navbar .navbar-nav .nav-link.active {
   transform: scale(1.1);
 }
 
+.background-image-left {
+  top: 28%;
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  z-index: -4;
+}
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
@@ -263,6 +312,7 @@ nav.navbar .navbar-nav .nav-link.active {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .proj-card:hover {
@@ -401,6 +451,11 @@ nav.navbar .navbar-nav .nav-link.active {
   opacity: 0.8;
 }
 
+.form-container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
 /************ Footer Css ************/
 .footer {
   padding: 0 0 50px 0;

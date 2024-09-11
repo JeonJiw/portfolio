@@ -16,9 +16,12 @@ export const Banner = () => {
     <section className="banner" id="home">
       <Container className="banner-container">
         <Row className="align-items-center">
-          <h1>Welcome to my portfolio</h1>
-          <p>Hi, I'm Jiwon. Full Stack / Front / Backend Developer</p>
-          <div className="mb-2">
+          <h1>Welcome to my portfolio, I'm Jiwon</h1>
+          <span className="gradient-text">
+            FullStack/Frontend/Backend Developer
+          </span>
+
+          <div className="banner-btn-container">
             <button onClick={onClickDownload}>Download CV</button>
             <Link to="contactme" smooth={true} duration={100} offset={-70}>
               <button>Contact Me</button>
