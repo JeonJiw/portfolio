@@ -2,8 +2,6 @@ import { forwardRef } from "react";
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import axios from "axios";
-import { BodyText } from "react-bootstrap-icons";
-
 export const ContactMe = forwardRef((props, ref) => {
   const formInitialDetails = {
     name: "",
@@ -13,7 +11,7 @@ export const ContactMe = forwardRef((props, ref) => {
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState({});
+  const [status, setStatus] = useState({ message: "", success: null });
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
@@ -22,27 +20,56 @@ export const ContactMe = forwardRef((props, ref) => {
     });
   };
 
-  const handleSubmit = () => {
-    axios
-      .post("http://localhost:8088/", {
-        body: {
-          formDetails,
-        },
-      })
-      .then(() => {
-        console.log("success");
-      })
-      .catch(() => {
-        console.log("failure");
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    setButtonText("Sending...");
+
+    //   axios
+    //     .post("http://localhost:8088/", {
+    //       body: {
+    //         formDetails,
+    //       },
+    //     })
+    //     .then(() => {
+    //       console.log("success");
+    //       setStatus({ message: "Email sent successfully!", success: true });
+    //       setButtonText("Send");
+    //     })
+    //     .catch(() => {
+    //       setStatus({
+    //         message: "Failed to send email. Please try again.",
+    //         success: false,
+    //       });
+    //       alert("Please retry to send an email");
+    //       setButtonText("Send");
+    //       console.log("failure");
+    //     });
+
+    try {
+      await axios.post("http://localhost:8088/", {
+        body: formDetails,
       });
+      setStatus({ message: "Email sent successfully!", success: true });
+      alert("Email sent successfully!");
+    } catch (error) {
+      console.log("error: ", error);
+      setStatus({
+        message: "Failed to send email. Please try again.",
+        success: false,
+      });
+      alert("Failed to send email. Please try again.");
+    } finally {
+      setButtonText("Send");
+    }
   };
   return (
     <section id="contactme" ref={ref}>
       <Container className="contact">
         <Row className="justify-content-center contact-container">
-          <Col md={8}>
+          <Col className="form-container" md={8}>
             <h2>Contact Me</h2>
-            <Form className="form-container" onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formName">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
@@ -80,7 +107,7 @@ export const ContactMe = forwardRef((props, ref) => {
               {status.message && (
                 <Col>
                   <p
-                    className={status.success === false ? "danger" : "success"}
+                    className={status.success ? "text-success" : "text-danger"}
                   >
                     {status.message}
                   </p>

@@ -13,18 +13,18 @@ app.use((req, res, next) => {
 });
 
 function sendEmail(body) {
-  return new Promise(() => {
-    console.log(body);
+  return new Promise((resolve, reject) => {
+    console.log(2, body);
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "jw.jeon24@gmail.com",
-        pass: "qgrz cnoz tjle kwkk",
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     const mail_configs = {
-      to: "jw.jeon24@gmail.com",
+      to: process.env.EMAIL_USER,
       from: body.email,
       subject: `Email from ${body.name}`,
       text: `This email fron ${body.email} // ${body.message}`,
@@ -32,17 +32,24 @@ function sendEmail(body) {
     transporter.sendMail(mail_configs, function (err, info) {
       if (err) {
         console.log(err);
-        return reject({ message: "Error" });
+        return reject({ message: "Error sending email" });
       }
+      console.log(info);
       return resolve({ message: "Email sent successfully" });
     });
   });
 }
 
 app.post("/", (req, res) => {
-  sendEmail(req.body.body.formDetails)
-    .then((response) => response.send(response.message))
-    .catch((error) => res.status(500).send(error.message));
+  console.log(1, req.body);
+  sendEmail(req.body.body)
+    .then((response) => {
+      res.send(response.message);
+    })
+    .catch((error) => {
+      console.error("Error sending email:", error);
+      res.status(500).send(error.message);
+    });
 });
 
 app.listen(port, () => console.log("Server Running"));
