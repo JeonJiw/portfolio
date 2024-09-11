@@ -15,9 +15,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
-  const isRoot = window.location.pathname === "/";
+  const basename = process.env.PUBLIC_URL;
+  const isRoot = window.location.pathname !== "/portfolio/project";
   return (
-    <Router basename="/">
+    <Router basename={basename}>
       <div className="App">
         {isRoot && <NavBar />}
         <Routes>
