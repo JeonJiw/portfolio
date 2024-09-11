@@ -17,12 +17,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
-  const basename = process.env.PUBLIC_URL;
-  const { id } = useParams();
+  const basename = process.env.PUBLIC_URL || "";
+  const isLocalhost = window.location.hostname === "localhost";
   const isRoot = !window.location.pathname.includes("/project");
+
   return (
-    // <Router basename={basename}>
-    <Router>
+    //github pages deploy -> with basename
+    <Router basename={basename}>
+      {/* //localhost -> this <Router> */}
+      {/* <Router> */}
       <ScrollToTop />
       <div className="App">
         {isRoot && <NavBar />}
