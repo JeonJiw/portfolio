@@ -29,10 +29,6 @@ function App() {
   const isRoot = !location.pathname.includes("/project");
 
   return (
-    //github pages deploy -> with basename
-    // <Router basename={basename}>
-    //{/* //localhost -> this <Router> */}
-
     <div className="App">
       <ScrollToTop />
       <NavBar />
