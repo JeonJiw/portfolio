@@ -16,7 +16,6 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    // Check if there's a hash in the URL (e.g., #skills, #projects)
     const hash = location.hash;
     if (hash) {
       const element = document.getElementById(hash.substring(1)); // Remove the # from the hash
@@ -25,8 +24,6 @@ function App() {
       }
     }
   }, [location]);
-
-  const isRoot = !location.pathname.includes("/project");
 
   return (
     <div className="App">

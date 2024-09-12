@@ -6,7 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const basename = process.env.PUBLIC_URL;
+const basename =
+  window.location.hostname === "localhost" ? undefined : process.env.PUBLIC_URL;
 root.render(
   <React.StrictMode>
     <BrowserRouter basename={basename}>
