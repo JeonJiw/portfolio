@@ -7,13 +7,26 @@ import { Footer } from "./components/Footer";
 import { ContactMe } from "./components/ContactMe";
 import { ProjectDetail } from "./components/ProjectDetail";
 import ScrollToTop from "./components/ScrollToTop";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
-  const basename = process.env.PUBLIC_URL || "";
-  const isLocalhost = window.location.hostname === "localhost";
-  const isRoot = !window.location.pathname.includes("/project");
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if there's a hash in the URL (e.g., #skills, #projects)
+    const hash = location.hash;
+    if (hash) {
+      const element = document.getElementById(hash.substring(1)); // Remove the # from the hash
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  const isRoot = !location.pathname.includes("/project");
 
   return (
     //github pages deploy -> with basename
@@ -22,7 +35,7 @@ function App() {
 
     <div className="App">
       <ScrollToTop />
-      {isRoot && <NavBar />}
+      <NavBar />
       <Routes>
         <Route
           path="/"
