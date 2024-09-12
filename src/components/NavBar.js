@@ -7,26 +7,28 @@ export const NavBar = () => {
       <Container>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
-            <Nav.Link>
-              <Link to="/home" smooth={true} duration={100}>
-                Home
-              </Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="skills" smooth={true} duration={100}>
-                Skills
-              </Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="projects" smooth={true} duration={100}>
-                Projects
-              </Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="contactme" smooth={true} duration={100}>
-                Contact Me
-              </Link>
-            </Nav.Link>
+            <Link to="home" smooth={true} duration={100} className="nav-link">
+              Home
+            </Link>
+            <Link to="skills" smooth={true} duration={100} className="nav-link">
+              Skills
+            </Link>
+            <Link
+              to="projects"
+              smooth={true}
+              duration={100}
+              className="nav-link"
+            >
+              Projects
+            </Link>
+            <Link
+              to="contactme"
+              smooth={true}
+              duration={100}
+              className="nav-link"
+            >
+              Contact Me
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
