@@ -1,48 +1,88 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import projects from "../projectsData";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import colorsharp from "../assets/img/color-sharp.png";
+import { programmingLanguages, webAppDevelopments } from "../SkillsData";
 
 export const ProjectDetail = () => {
   const { id } = useParams();
-  const navigate = useNavigate(); // Use this for navigation
   const project = projects.find((p) => p.id === id);
+  const allSkills = [...programmingLanguages, ...webAppDevelopments];
+
+  const findTechStack = (techNames) => {
+    return techNames
+      .map((techName) => {
+        const skill = allSkills.find((skill) => skill.name === techName);
+        return skill ? { src: skill.src, name: skill.name } : null; // Return an object with src and name
+      })
+      .filter((item) => item !== null); // Remove null values
+  };
+
+  const techStackDetails = findTechStack(project.techStack);
 
   if (!project) {
     return <div>Project not found</div>;
   }
 
   return (
-    <section className="project-page">
+    <section
+      className="project-page"
+      style={{ backgroundImage: `url(${colorsharp})` }}
+    >
       <Container>
         <Row>
-          <button onClick={() => navigate("/")}>Go Back</button>{" "}
-          <h1>{project.title}</h1>
-          <p>{project.description}</p>
-          <img src={project.imgUrl} alt={project.title} />
-          <p>
-            <strong>Development Type:</strong> {project.devType}
-          </p>
-          <p>
-            <strong>Architecture:</strong> {project.architecture}
-          </p>
-          <button>
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub Repository
-            </a>
-          </button>
-          <div className="video">
-            <iframe
-              width="560"
-              height="315"
-              src={project.videoUrl}
-              title={project.title}
-              allowFullScreen
-            ></iframe>
-          </div>
+          <Col md={8} className="project-details">
+            <h1 className="project-title">{project.title}</h1>
+            <p className="project-subtitle">{project.subtitle}</p>
+            <p className="project-full-description">{project.description}</p>
+            <div className="buttons">
+              <button className="github-btn">
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub Repository
+                </a>
+              </button>
+            </div>
+          </Col>
+          <Col md={4} className="tech-wrap-up">
+            <h2>Tech Wrap-up</h2>
+            {techStackDetails.length > 0 ? (
+              techStackDetails.map((tech, index) => (
+                <div
+                  key={index}
+                  className="tech-item d-flex flex-column align-items-center"
+                >
+                  <img
+                    src={tech.src}
+                    alt={`Tech stack image ${index + 1}`}
+                    className="tech-image"
+                  />
+                  <span className="tech-name">{tech.name}</span>
+                </div>
+              ))
+            ) : (
+              <p>No tech stack images available</p>
+            )}
+          </Col>
+        </Row>
+        <Row className="image-row">
+          <Col md={12} className="image-column">
+            {project.imgUrl.length > 0 ? (
+              project.imgUrl.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`Project image ${index + 1}`}
+                  className="project-image"
+                />
+              ))
+            ) : (
+              <p>No project images available</p>
+            )}
+          </Col>
         </Row>
       </Container>
     </section>

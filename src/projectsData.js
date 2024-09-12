@@ -10,13 +10,15 @@ const projectsData = [
   {
     id: "microsoft-team-auto-recording-system",
     title: "Microsoft Team Auto Recording System",
+    subtitle: "Automated Meeting Recording for Microsoft Teams",
     devType: "Web Development",
     description:
       "In response to the growing demand for streamlined meeting management within Microsoft Teams, AutoRecord Teams aims to provide a seamless solution for configuring and automating the recording of specific Teams Meetings. This application, designed to be deployed within a client's Microsoft 365 tenant, offers a user-friendly interface, deep integration with Microsoft Graph API, and adherence to Microsoft security standards.",
     githubUrl: "https://github.com/JeonJiw/AutoRecordTeams",
     youtubeUrl: "https://www.youtube.com/watch?v=your-video-id",
+    techStack: ["React", "GraphQL", "NodeJS"], // Ensure names are properly capitalized
     architecture: "Frontend: React, Backend: Node.js, GraphQL",
-    imgUrl: autoRecordingImg1,
+    imgUrl: [autoRecordingImg1, autoRecordingImg2, autoRecordingImg3],
     features: [
       "User-friendly interface within Microsoft Teams to configure meeting recording settings",
       "Integration with Microsoft Graph API to fetch all meetings within the client's tenant",
@@ -27,37 +29,43 @@ const projectsData = [
   {
     id: "ther-genius-game",
     title: "Ther Genius Game",
+    subtitle: "Interactive Web Game Inspired by the Genius Show",
     devType: "Web Development",
     description:
       "A web game inspired by the popular Genius show, with multiple puzzles and strategies built into the platform.",
     githubUrl: "https://github.com/THERgeniusGame",
     youtubeUrl: "https://www.youtube.com/watch?v=your-video-id",
+    techStack: ["React", "NodeJS", "JavaScript", "MySQL", "Amazon", "GitHub"], // Ensure names are properly capitalized
     architecture: "Frontend: React, Backend: Node.js, Database: Firebase",
-    imgUrl: therGeniusImg1,
+    imgUrl: [therGeniusImg1, therGeniusImg2, therGeniusImg3, therGeniusArch],
   },
   {
     id: "safecam",
     title: "SafeCam",
+    subtitle: "Real-time Theft Monitoring System",
     devType: "Web Development",
     description:
       "A project for monitoring theft in public places using a laptop and phone cameras for real-time monitoring.",
     githubUrl: "https://github.com/your-repo/safecam",
     youtubeUrl: "https://www.youtube.com/watch?v=your-video-id",
+    techStack: ["React", "NestJS"], // Ensure names are properly capitalized
     architecture:
       "Frontend: React, Backend: NestJS, Database: PostgreSQL, Real-time: Socket.io",
-    imgUrl: therGeniusImg2,
+    imgUrl: [therGeniusImg2],
   },
   {
     id: "calory-calculator",
     title: "Calory Calculator",
+    subtitle: "Android App for Calorie Tracking",
     devType: "Android App Development",
     description:
       "An Android app to help users calculate and track their calorie intake on a daily basis.",
     githubUrl: "https://github.com/JhenyfferCristo/FoodCalorieExplorer",
     youtubeUrl: "https://www.youtube.com/watch?v=your-video-id",
+    techStack: ["Kotlin"], // Ensure names are properly capitalized
     architecture:
       "Android app built using Kotlin, Room Database for data storage.",
-    imgUrl: therGeniusImg3,
+    imgUrl: [therGeniusImg3],
   },
 ];
 

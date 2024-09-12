@@ -217,7 +217,7 @@ nav.navbar .navbar-nav {
 
   background-position: top center;
   background-size: cover;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
 }
 
 .skill-bx {
@@ -364,46 +364,106 @@ nav.navbar .navbar-nav {
 
 .project-page {
   padding: 80px 0;
+  position: relative;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("./assets/img/color-sharp.png");
+
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.project-page h1 {
-  font-size: 35px;
-  font-weight: 700;
-  margin-bottom: 1rem;
+.project-details {
+  padding-right: 40px;
 }
 
-.project-page p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+.project-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-.project-page img {
-  width: 300px;
-  height: 100%;
-  margin-bottom: 1rem;
+.project-subtitle {
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 20px;
 }
 
-.project-page a {
-  display: inline-block;
-  font-size: 1rem;
-  color: #fff;
+.project-full-description {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.tech-wrap-up {
+  border-left: 1px solid #ddd;
+  padding-left: 20px;
+}
+
+.tech-wrap-up h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.tech-wrap-up img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  transition: transform 0.3s;
+  margin: 10px;
+}
+.image-row {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center images horizontally */
+}
+
+.image-column {
+  display: flex;
+  flex-direction: column; /* Stack images vertically */
+  align-items: center; /* Center each image */
+  width: 100%; /* Make sure the column takes full width */
+}
+
+.project-image {
+  width: 80%;
+  max-width: 900px;
+  margin-top: 20px;
+  margin-top: 20px;
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.github-btn {
+  margin-right: 10px;
+  padding: 10px 15px;
+}
+
+.github-btn a {
+  color: white;
   text-decoration: none;
-  transition: background-color 0.2s, color 0.2s;
+}
+.tech-item {
+  margin-bottom: 1rem;
 }
 
-.project-page a:hover {
-  cursor: pointer;
+.tech-image {
+  max-width: 100px;
+  height: auto;
 }
 
-.video {
-  margin-top: 1rem;
+.tech-name {
+  margin-top: 0.5rem;
+  font-weight: bold;
 }
 
-.video iframe {
-  width: 100%;
-  max-width: 560px;
-  height: 315px;
-}
 /************ Contact Css ************/
 
 .contact h2 {
