@@ -10,7 +10,7 @@ const projectsData = [
   {
     id: "microsoft-team-auto-recording-system",
     title: "Microsoft Team Auto Recording System",
-    subtitle: "Automated Meeting Recording for Microsoft Teams",
+    subtitle: "Auto Recording App",
     devType: "Web Development",
     description:
       "In response to the growing demand for streamlined meeting management within Microsoft Teams, AutoRecord Teams aims to provide a seamless solution for configuring and automating the recording of specific Teams Meetings. This application, designed to be deployed within a client's Microsoft 365 tenant, offers a user-friendly interface, deep integration with Microsoft Graph API, and adherence to Microsoft security standards.",

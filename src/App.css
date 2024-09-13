@@ -293,75 +293,93 @@ nav.navbar .navbar-nav {
   padding: 80px 0;
   position: relative;
 }
+
 .project h2 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-size: 35px;
   font-weight: 700;
   text-align: center;
 }
 
-.proj-card {
-  width: 100%;
-  max-width: 280px;
-  margin: auto;
-  height: 100%;
+.project-card {
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  border: 1px solid #ddd; /* Optional: for card border */
+  border-radius: 0.25rem; /* Optional: for rounded corners */
+  overflow: hidden; /* Optional: for overflow handling */
 }
 
-.proj-card:hover {
+.project-card:hover {
   transform: scale(1.05);
-  cursor: pointer;
 }
 
-.proj-imgbx {
+.card-img-top {
   width: 100%;
-  max-width: 280px;
-  height: 180px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
 }
 
-.proj-txtx {
-  height: 50px;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
+.card-body {
+  flex: 1; /* Allows this area to expand and push the buttons to the bottom */
+  padding: 20px;
 }
 
-.proj-devType {
-  flex-grow: 1;
-  font-size: 14px;
-  margin-bottom: 10px;
-  text-align: center;
+.card-title {
+  font-size: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(91, 91, 91, 0.371);
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  width: 2%;
-  height: 30px;
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  padding-top: 20px;
+}
+
+/* Tech Stack */
+.tech-used {
+  font-size: 0.9rem;
+  color: #5b5b5b;
+  padding-top: 20px;
+  margin-bottom: 15px;
+}
+
+.tech-used-container {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tech-item {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  background: linear-gradient(
-    90.21deg,
-    rgba(170, 54, 124, 0.5) -5.91%,
-    rgba(74, 47, 189, 0.5) 111.58%
-  );
-  margin: auto;
-  border-radius: 5px;
+  flex: 1 0 auto;
 }
 
-.crousel-card {
-  padding: 0; /* Remove padding from Col */
-  margin: 0; /* Remove margin from Col */
+.tech-item img {
+  width: 30px;
+  height: 30px;
 }
 
-.carousel-item {
-  height: 400px;
-  padding: 40px;
+.tech-name {
+  font-size: 10px;
+  margin-top: 0;
 }
 
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+/* Project Page Styles */
 .project-page {
   padding: 80px 0;
   position: relative;
@@ -369,11 +387,10 @@ nav.navbar .navbar-nav {
       rgba(255, 255, 255, 0.2),
       rgba(255, 255, 255, 0.7)
     ),
-    url("./assets/img/color-sharp.png");
-
+    url("./assets/img/background.jpg");
   background-position: top center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; /* Fixed repeating issue */
 }
 
 .project-details {
@@ -413,55 +430,28 @@ nav.navbar .navbar-nav {
   transition: transform 0.3s;
   margin: 10px;
 }
+
 .image-row {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center images horizontally */
+  align-items: center;
 }
 
 .image-column {
   display: flex;
-  flex-direction: column; /* Stack images vertically */
-  align-items: center; /* Center each image */
-  width: 100%; /* Make sure the column takes full width */
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .project-image {
   width: 80%;
   max-width: 900px;
   margin-top: 20px;
-  margin-top: 20px;
-  border-radius: 8px; /* Optional: Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.buttons {
-  margin-top: 20px;
-}
-
-.github-btn {
-  margin-right: 10px;
-  padding: 10px 15px;
-}
-
-.github-btn a {
-  color: white;
-  text-decoration: none;
-}
-.tech-item {
-  margin-bottom: 1rem;
-}
-
-.tech-image {
-  max-width: 100px;
-  height: auto;
-}
-
-.tech-name {
-  margin-top: 0.5rem;
-  font-weight: bold;
 }
 
 /************ Contact Css ************/

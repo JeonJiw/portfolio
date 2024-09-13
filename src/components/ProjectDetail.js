@@ -3,6 +3,7 @@ import projects from "../projectsData";
 import { Container, Row, Col } from "react-bootstrap";
 import colorsharp from "../assets/img/color-sharp.png";
 import { programmingLanguages, webAppDevelopments } from "../SkillsData";
+import background from "../assets/img/background.jpg";
 
 export const ProjectDetail = () => {
   const { id } = useParams();
@@ -49,23 +50,21 @@ export const ProjectDetail = () => {
           </Col>
           <Col md={4} className="tech-wrap-up">
             <h2>Tech Wrap-up</h2>
-            {techStackDetails.length > 0 ? (
-              techStackDetails.map((tech, index) => (
-                <div
-                  key={index}
-                  className="tech-item d-flex flex-column align-items-center"
-                >
-                  <img
-                    src={tech.src}
-                    alt={`Tech stack image ${index + 1}`}
-                    className="tech-image"
-                  />
-                  <span className="tech-name">{tech.name}</span>
-                </div>
-              ))
-            ) : (
-              <p>No tech stack images available</p>
-            )}
+            <div className="icons">
+              {techStackDetails.length > 0 ? (
+                techStackDetails.map((tech, index) => (
+                  <div
+                    key={index}
+                    className="tech-item d-flex flex-column align-items-center"
+                  >
+                    <img src={tech.src} alt={tech.alt} className="tech-image" />
+                    <span className="tech-name">{tech.name}</span>
+                  </div>
+                ))
+              ) : (
+                <p>No tech stack images available</p>
+              )}
+            </div>
           </Col>
         </Row>
         <Row className="image-row">
@@ -75,7 +74,7 @@ export const ProjectDetail = () => {
                 <img
                   key={index}
                   src={img}
-                  alt={`Project image ${index + 1}`}
+                  alt={img.alt}
                   className="project-image"
                 />
               ))

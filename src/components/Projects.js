@@ -1,12 +1,19 @@
-import { Container, Row, Col, Carousel } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
+// Projects.jsx
+import { Container, Row, Col } from "react-bootstrap";
 import projectsData from "../projectsData.js";
+import { programmingLanguages, webAppDevelopments } from "../SkillsData";
 
 export const Projects = () => {
-  const projectChunks = [];
-  for (let i = 0; i < projectsData.length; i += 3) {
-    projectChunks.push(projectsData.slice(i, i + 3));
-  }
+  const allSkills = [...programmingLanguages, ...webAppDevelopments];
+
+  const findTechStack = (techNames) => {
+    return techNames
+      .map((techName) => {
+        const skill = allSkills.find((skill) => skill.name === techName);
+        return skill ? { src: skill.src, name: skill.name } : null;
+      })
+      .filter((item) => item !== null);
+  };
 
   return (
     <section className="project" id="projects">
@@ -14,19 +21,72 @@ export const Projects = () => {
         <Row>
           <Col>
             <h2>Projects</h2>
-            <Carousel indicators={false} controls={true} interval={null}>
-              {projectChunks.map((chunk, index) => (
-                <Carousel.Item key={index}>
-                  <Row className="justify-content-center">
-                    {chunk.map((project, idx) => (
-                      <Col key={idx} sm={6} md={4} className="card-wrapper">
-                        <ProjectCard {...project} />
-                      </Col>
-                    ))}
-                  </Row>
-                </Carousel.Item>
+            <Row className="justify-content-center">
+              {projectsData.map((project, idx) => (
+                <Col
+                  key={idx}
+                  sm={6}
+                  md={4}
+                  lg={3}
+                  className="card-wrapper mb-4"
+                >
+                  <div className="project-card">
+                    <img
+                      src={project.imgUrl[0]}
+                      alt={project.title}
+                      className="card-img-top"
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        {project.title} | {project.subtitle}
+                      </h5>
+
+                      <p className="card-text">Description</p>
+                      <p className="tech-used">
+                        <strong>Tech used:</strong>
+                        <div className="tech-used-container">
+                          {findTechStack(project.techStack).length > 0 ? (
+                            findTechStack(project.techStack).map(
+                              (tech, index) => (
+                                <div
+                                  key={index}
+                                  className="tech-item d-flex flex-column align-items-center"
+                                >
+                                  <img
+                                    src={tech.src}
+                                    alt={tech.name}
+                                    className="tech-image"
+                                  />
+                                  <span className="tech-name">{tech.name}</span>
+                                </div>
+                              )
+                            )
+                          ) : (
+                            <p>No tech stack images available</p>
+                          )}
+                        </div>
+                      </p>
+                    </div>
+                    <div className="buttons">
+                      <button>
+                        <a
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          See Live
+                        </a>
+                      </button>
+                      <button>
+                        <a href={project.sourceCode} target="_blank">
+                          Source Code
+                        </a>
+                      </button>
+                    </div>
+                  </div>
+                </Col>
               ))}
-            </Carousel>
+            </Row>
           </Col>
         </Row>
       </Container>
