@@ -3,10 +3,10 @@ import { Link } from "react-scroll";
 
 export const Banner = () => {
   const onClickDownload = () => {
-    const url = "http://localhost:3000/Resume_JiwonJeon_202409.pdf";
+    const url = "/Jiwon Jeon's Resume.pdf";
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", "Resume_JiwonJeon_202409.pdf");
+    link.setAttribute("download", "Jiwon Jeon's Resume.pdf");
     document.body.appendChild(link);
     link.click();
     link.remove();
