@@ -68,16 +68,7 @@ export const Projects = () => {
                       </p>
                     </div>
                     <div className="buttons">
-                      <button>
-                        <a
-                          href={project.liveLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          See Live
-                        </a>
-                      </button>
-                      <button>
+                      <button className="source-code-btn">
                         <a href={project.sourceCode} target="_blank">
                           Source Code
                         </a>
