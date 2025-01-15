@@ -1,4 +1,4 @@
-import { Container, Col, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import colorsharp from "../assets/img/color-sharp.png";
 import { programmingLanguages, webAppDevelopments } from "../SkillsData";
 

@@ -1,4 +1,3 @@
-// Projects.jsx
 import { Container, Row, Col } from "react-bootstrap";
 import projectsData from "../projectsData.js";
 import { programmingLanguages, webAppDevelopments } from "../SkillsData";

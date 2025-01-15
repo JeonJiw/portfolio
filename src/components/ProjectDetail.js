@@ -3,7 +3,6 @@ import projects from "../projectsData";
 import { Container, Row, Col } from "react-bootstrap";
 import colorsharp from "../assets/img/color-sharp.png";
 import { programmingLanguages, webAppDevelopments } from "../SkillsData";
-import background from "../assets/img/background.jpg";
 
 export const ProjectDetail = () => {
   const { id } = useParams();
