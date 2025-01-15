@@ -16,6 +16,9 @@ import mongodb from "./assets/img/mongodb.svg";
 import mysql from "./assets/img/mysql.svg";
 import amazon from "./assets/img/amazon.svg";
 import graphql from "./assets/img/graphql.svg";
+import python from "./assets/img/python.png";
+import websocket from "./assets/img/websocket.svg";
+import postgreql from "./assets/img/postgresql.svg";
 
 export const programmingLanguages = [
   { src: java, name: "Java" },
@@ -26,6 +29,7 @@ export const programmingLanguages = [
   { src: html, name: "HTML" },
   { src: css, name: "CSS" },
   { src: kotlin, name: "Kotlin" },
+  { src: python, name: "Python" },
 ];
 
 export const webAppDevelopments = [
@@ -39,4 +43,6 @@ export const webAppDevelopments = [
   { src: github, name: "GitHub" },
   { src: amazon, name: "Amazon" },
   { src: graphql, name: "GraphQL" },
+  { src: websocket, name: "WebSocket" },
+  { src: postgreql, name: "PostgreQL" },
 ];
