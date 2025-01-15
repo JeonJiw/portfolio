@@ -68,7 +68,11 @@ export const Projects = () => {
                     </div>
                     <div className="buttons">
                       <button className="source-code-btn">
-                        <a href={project.sourceCode} target="_blank">
+                        <a
+                          href={project.sourceCode}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           Source Code
                         </a>
                       </button>
