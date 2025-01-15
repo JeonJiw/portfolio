@@ -5,8 +5,33 @@ import therGeniusImg1 from "./assets/img/TherGeniusLogo.png";
 import therGeniusImg2 from "./assets/img/TherGeniusGame.png";
 import therGeniusImg3 from "./assets/img/TherGeniusGameRoom.png";
 import therGeniusArch from "./assets/img/TherGeniusArch.png";
+import safeCamActivity from "./assets/img/SafeCam-Activities.png";
+import safeCamMonitoring from "./assets/img/SafeCam-Monitoring.png";
+import safeCamDevices from "./assets/img/SafeCam-Devices.png";
+import safeCamMain from "./assets/img/SafeCam-Main.png";
+import safeCamMain2 from "./assets/img/SafeCam-Main2.png";
 
 const projectsData = [
+  {
+    id: "safecam",
+    title: "SafeCam",
+    subtitle: "Real-time Theft Monitoring System",
+    devType: "Web Development",
+    description:
+      "A project for monitoring theft in public places using a laptop and phone cameras for real-time monitoring.",
+    githubUrl: "https://github.com/JeonJiw/SafeCam",
+    youtubeUrl: "https://www.youtube.com/watch?v=your-video-id",
+    techStack: ["React", "NestJS", "Python", "YOLO", "WebSocket"], // Ensure names are properly capitalized
+    architecture:
+      "Frontend: React, Backend: NestJS, Database: PostgreSQL, Real-time: Socket.io",
+    imgUrl: [
+      safeCamMain,
+      safeCamMain2,
+      safeCamActivity,
+      safeCamMonitoring,
+      safeCamDevices,
+    ],
+  },
   {
     id: "microsoft-team-auto-recording-system",
     title: "Microsoft Team Auto Recording System",
@@ -39,20 +64,7 @@ const projectsData = [
     architecture: "Frontend: React, Backend: Node.js, Database: Firebase",
     imgUrl: [therGeniusImg1, therGeniusImg2, therGeniusImg3, therGeniusArch],
   },
-  {
-    id: "safecam",
-    title: "SafeCam",
-    subtitle: "Real-time Theft Monitoring System",
-    devType: "Web Development",
-    description:
-      "A project for monitoring theft in public places using a laptop and phone cameras for real-time monitoring.",
-    githubUrl: "https://github.com/your-repo/safecam",
-    youtubeUrl: "https://www.youtube.com/watch?v=your-video-id",
-    techStack: ["React", "NestJS"], // Ensure names are properly capitalized
-    architecture:
-      "Frontend: React, Backend: NestJS, Database: PostgreSQL, Real-time: Socket.io",
-    imgUrl: [therGeniusImg2],
-  },
+
   {
     id: "calory-calculator",
     title: "Calory Calculator",
