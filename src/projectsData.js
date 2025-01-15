@@ -23,7 +23,7 @@ const projectsData = [
     youtubeUrl: "https://www.youtube.com/watch?v=your-video-id",
     techStack: ["React", "NestJS", "Python", "YOLO", "WebSocket"], // Ensure names are properly capitalized
     architecture:
-      "Frontend: React, Backend: NestJS, Database: PostgreSQL, Real-time: Socket.io",
+      "Frontend: React, Backend: NestJS, Python, Database: PostgreSQL, Real-time: Socket.io, Object Detection: YOLOv5",
     imgUrl: [
       safeCamMain,
       safeCamMain2,

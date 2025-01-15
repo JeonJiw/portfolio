@@ -40,7 +40,7 @@ export const Projects = () => {
                         {project.title} | {project.subtitle}
                       </h5>
 
-                      <p className="card-text">Description</p>
+                      <p className="card-text">{project.description}</p>
                       <p className="tech-used">
                         <strong>Tech used:</strong>
                         <div className="tech-used-container">
